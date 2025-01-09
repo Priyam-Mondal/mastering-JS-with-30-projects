@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <title>Todo App</title>
+  </head>
+  <body class="bg-slate-900">
+    <div
+      class="flex flex-col flex-wrap justify-center items-center h-100vh mt-40"
+    >
+      <!-- stats -->
+      <div
+        class="flex border-purple-700 border-2 rounded-xl w-[60%] justify-between h-48"
+      >
+        <div class="p-5 w-[70%]">
+          <h2 class="font-bold text-white text-3xl font-serif">Todo done</h2>
+          <p class="text-gray-400 text-lg font-sans">Keep it up</p>
+          <div
+            id="progress-bar"
+            class="mt-10 h-2 w-full bg-gray-400 rounded-lg"
+          >
+            <div
+              id="current-progress"
+              class="h-2 w-0 bg-teal-400 rounded-lg transition-all ease-in"
+            ></div>
+          </div>
+        </div>
+        <div
+          id="todo-count"
+          class="flex items-center justify-center h-28 w-28 text-white bg-purple-500 rounded-full mt-8 mx-4 font-bold text-2xl"
+        >
+          
+        </div>
+      </div>
+
+      <!-- todo input -->
+      <div class="my-4 w-[60%] flex">
+        <input
+          class="border-purple-800 border-2 bg-slate-900 h-14 w-full mr-3 rounded-lg px-10 text-white"
+          type="text"
+          id="todoInput"
+          placeholder="write your task"
+        />
+        <button
+          class="flex items-center justify-center h-14 w-14 bg-purple-400 rounded-full font-bold text-white text-5xl"
+          id="todoButton"
+        >
+          +
+        </button>
+      </div>
+
+      <!-- todo display -->
+      <div class="w-[60%]">
+        <ul id="todo-lists" class="w-full p-0 m-0">
+
+         
+          <!-- <li
+            class="w-full items-center bg-purple-900 my-4 rounded-lg overflow-hidden"
+          >
+            <div class="w-full flex h-auto items-center p-2">
+              <input class="ml-5 h-5 w-5" type="checkbox" name="" id="" />
+              <span
+                class="text-white ml-5 flex-1 font-serif text-xl line-through"
+              >
+                Test
+              </span> -->
+
+              <!-- Buttons container -->
+              <!-- <div class="ml-auto flex space-x-2">
+                <button>
+                  <img class="h-6 w-6" src="./images/edit.png" alt="edit" />
+                </button>
+                <button>
+                  <img
+                    class="h-6 w-6 mr-3"
+                    src="./images/bin.png"
+                    alt="delete"
+                  />
+                </button>
+              </div>
+            </div>
+          </li> -->
+
+          <!-- <li class="w-full items-center my-4 rounded-lg bg-purple-900">
+            <div class="w-full flex h-auto items-center p-2">
+              <input class="ml-5 h-5 w-5" type="checkbox" name="" id="" />
+              <span class="text-white ml-5 flex-1 font-serif text-xl">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad
+                praesentium quos consequuntur id voluptas obcaecati tempore
+                voluptates vero velit aliquid numquam sint ullam, enim nam sunt
+                commodi temporibus quia laborum!
+              </span> -->
+
+              <!-- Buttons container -->
+              <!-- <div class="ml-auto flex space-x-2">
+                <button>
+                  <img
+                    class="h-6 w-6"
+                    id="editImg"
+                    src="./images/edit.png"
+                    alt="edit"
+                  />
+                </button>
+                <button>
+                  <img
+                    class="h-6 w-6 mr-3"
+                    src="./images/bin.png"
+                    alt="delete"
+                  />
+                </button>
+              </div>
+            </div>
+          </li>
+          -->
+        </ul>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
