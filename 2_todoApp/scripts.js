@@ -116,6 +116,7 @@ const renderTodos = () => {
 const deleteTodo = (index) => {
   todos.splice(index, 1);
   renderTodos();
+  displayStats();
   saveToLocalStorage();
 };
 
