@@ -1,4 +1,3 @@
-
 const todoInput = document.querySelector("#todoInput");
 const todoButton = document.querySelector("#todoButton");
 const todoList = document.querySelector("#todo-lists");
@@ -6,11 +5,10 @@ const todoCount = document.querySelector("#todo-count");
 const progressBar = document.querySelector("#progress-bar");
 const currentProgress = document.querySelector("#current-progress");
 
-
 //save to local storage
 const saveToLocalStorage = () => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-}
+  localStorage.setItem("todos", JSON.stringify(todos));
+};
 
 const addTodo = (todo) => {
   const todoText = todoInput.value.trim();
@@ -87,8 +85,9 @@ const renderTodos = () => {
     // add eventListener to checkbox
     checkBox.addEventListener("change", (e) => {
       todo.completed = e.target.checked;
-      displayStats();
+
       saveToLocalStorage();
+      displayStats();
       if (e.target.checked) {
         spanText.classList.add("line-through", "text-green-500");
       } else {
@@ -115,9 +114,9 @@ const renderTodos = () => {
 
 const deleteTodo = (index) => {
   todos.splice(index, 1);
+  saveToLocalStorage();
   renderTodos();
   displayStats();
-  saveToLocalStorage();
 };
 
 const updateTodo = (index, todoDiv, spanText, editImg) => {
@@ -156,7 +155,10 @@ const updateTodo = (index, todoDiv, spanText, editImg) => {
 const displayStats = () => {
   const total = todos.length;
   const completed = todos.filter((todo) => todo.completed).length;
-  const progressPercentage = Math.floor((completed / total) * 100);
+
+  // Handle division by zero when there is no todo
+  const progressPercentage =
+    total > 0 ? Math.floor((completed / total) * 100) : 0;
 
   console.log(total + " " + completed);
 
@@ -165,8 +167,6 @@ const displayStats = () => {
 };
 
 todoButton.addEventListener("click", addTodo);
-
-
 
 const todos = JSON.parse(localStorage.getItem("todos")) || [];
 
